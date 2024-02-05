@@ -1,0 +1,52 @@
+.heading {
+  @include heading-style;
+}
+
+@each $level, $size in $heading-font-sizes {
+
+  h#{$level},
+  .heading_h#{$level} {
+    @include heading-style($font-size: $size);
+  }
+}
+
+@each $name, $size in $text {
+  .text-#{$name} {
+    font-size: $size;
+  }
+}
+
+@for $i from 1 through 10 {
+  .line-clamp-#{$i} {
+    @include line-clamp($i);
+  }
+}
+
+@each $weight-name, $weight-value in $font {
+  .font-#{$weight-name} {
+    font-weight: $weight-value;
+  }
+}
+
+@each $leading-name, $leading-value in $leading {
+  .leading-#{$leading-name} {
+    line-height: $leading-value;
+  }
+}
+
+@each $tracking-name, $tracking-value in $tracking {
+  .tracking-#{$tracking-name} {
+    letter-spacing: $tracking-value;
+  }
+}
+
+@each $family-name, $family-value in $font-family {
+  .font-family-#{$family-name} {
+    font-family: $family-value;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

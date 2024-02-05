@@ -1,0 +1,17 @@
+// Loop over aspect ratios
+@each $aspect-name, $aspect-value in $aspect-ratios {
+  .aspect-#{$aspect-name} {
+    aspect-ratio: $aspect-value;
+  }
+}
+
+// Loop to generate width utilities
+@each $key, $value in $sizes {
+  .w-#{$key} {
+    width: $value;
+  }
+
+  .h-#{$key} {
+    height: $value;
+  }
+}

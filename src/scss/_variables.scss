@@ -1,0 +1,151 @@
+$font-family: (
+  "serif": "Fraunces, serif",
+  "sans": "General Sans, sans-serif",
+  "mono": "Fira Code, monospace",
+);
+
+$font: (
+  "thin": 100,
+  "extralight": 200,
+  "light": 300,
+  "normal": 400,
+  "medium": 500,
+  "semibold": 600,
+  "bold": 700,
+  "extrabold": 800,
+  "black": 900,
+);
+
+$text: (
+  "10xl": clamp(3.5rem, 8vw, 7rem),
+  "9xl": clamp(3rem, 7vw, 6rem),
+  "8xl": clamp(2.75rem, 6.5vw, 4.5rem),
+  "7xl": clamp(2.5rem, 6vw, 4rem),
+  "6xl": clamp(2.25rem, 5.5vw, 3.75rem),
+  "5xl": clamp(2rem, 5vw, 3rem),
+  "4xl": clamp(1.75rem, 4.5vw, 2.25rem),
+  "3xl": clamp(1.5rem, 4vw, 2rem),
+  "2xl": clamp(1.25rem, 3.5vw, 1.5rem),
+  "xl": clamp(1.125rem, 3vw, 1.25rem),
+  "lg": clamp(1rem, 2.5vw, 1.125rem),
+  "base": clamp(0.875rem, 2vw, 1rem),
+  "sm": clamp(0.75rem, 1.5vw, 0.875rem),
+);
+
+$leading: (
+  "none": 1,
+  "tight": 1.25,
+  "snug": 1.375,
+  "normal": 1.5,
+  "relaxed": 1.75,
+  "loose": 2,
+);
+
+$tracking: (
+  "tighter": -0.05em,
+  "tight": -0.025em,
+  "normal": 0em,
+  "wide": 0.025em,
+  "wider": 0.05em,
+  "widest": 0.1em,
+);
+
+$heading-font-sizes: (
+  1: "9xl",
+  2: "8xl",
+  3: "7xl",
+  4: "6xl",
+  5: "5xl",
+  6: "4xl"
+);
+
+$sizes: (
+  // Original spacing values
+  "0": 0rem,
+  "px": 1px,
+  "1": clamp(0.25rem, 1vw, 0.5rem),
+  "2": clamp(0.5rem, 1vw, 1rem),
+  "3": clamp(0.75rem, 2vw, 1.5rem),
+  "4": clamp(1rem, 2vw, 2rem),
+  "5": clamp(1.25rem, 2vw, 2.5rem),
+  "6": clamp(1.5rem, 3vw, 3rem),
+  "8": clamp(2rem, 4vw, 4rem),
+  "10": clamp(2.5rem, 5vw, 5rem),
+  "12": clamp(3rem, 6vw, 6rem),
+  "16": clamp(4rem, 8vw, 8rem),
+  "20": clamp(5rem, 10vw, 10rem),
+  "24": clamp(6rem, 12vw, 12rem),
+  "32": clamp(8rem, 16vw, 16rem),
+  // Additional width utilities
+  "full": 100%,
+  "screen": 100vw,
+  "svw": 100svw,
+  "lvw": 100lvw,
+  "dvw": 100dvw,
+  "min": min-content,
+  "max": max-content,
+  "fit": fit-content,
+);
+
+// Define a map for align-items classes
+$align-items-classes: (
+  "start": flex-start,
+  "end": flex-end,
+  "center": center,
+  "baseline": baseline,
+  "stretch": stretch
+);
+
+// Define maps for justify-content, justify-self, and justify-items classes
+$justify-content-classes: (
+  "normal": normal,
+  "start": flex-start,
+  "end": flex-end,
+  "center": center,
+  "between": space-between,
+  "around": space-around,
+  "evenly": space-evenly,
+  "stretch": stretch
+);
+
+$justify-self-classes: (
+  "auto": auto,
+  "start": start,
+  "end": end,
+  "center": center,
+  "stretch": stretch
+);
+
+$justify-items-classes: (
+  "start": start,
+  "end": end,
+  "center": center,
+  "stretch": stretch
+);
+
+$flex-direction-classes: (
+  "row": row,
+  "row-reverse": row-reverse,
+  "col": column,
+  "col-reverse": column-reverse,
+);
+
+$flex-wrap-classes: (
+  "flex-wrap": wrap,
+  "flex-wrap-reverse": wrap-reverse,
+  "flex-nowrap": nowrap
+);
+
+$positions: (
+  "static": static,
+  "fixed": fixed,
+  "absolute": absolute,
+  "relative": relative,
+  "sticky": sticky
+);
+
+$aspect-ratios: (
+  "auto": "auto",
+  "square": "1 / 1",
+  "video": "16 / 9",
+);

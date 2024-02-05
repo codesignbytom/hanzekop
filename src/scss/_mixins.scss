@@ -1,0 +1,77 @@
+@mixin heading-style($font-weight: "light", $letter-spacing: "tight", $line-height: "none", $font-size: null) {
+  margin: unset;
+  $family: map-get($font-family, "serif");
+  font-family: #{$family};
+  font-weight: map-get($font, $font-weight);
+  letter-spacing: map-get($tracking, $letter-spacing);
+  line-height: map-get($leading, $line-height);
+
+  @if $font-size !=null {
+    font-size: map-get($text, $font-size);
+  }
+}
+
+@mixin line-clamp($lines) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+}
+
+@mixin odd($class) {
+  &:nth-child(odd) {
+    @extend .#{$class};
+  }
+}
+
+@mixin even($class) {
+  &:nth-child(even) {
+    @extend .#{$class};
+  }
+}
+
+
+@mixin generate-position-utilities {
+  @each $key, $value in $sizes {
+
+    .inset-#{$key} {
+      inset: $value;
+    }
+
+    .inset-x-#{$key} {
+      left: $value;
+      right: $value;
+    }
+
+    .inset-y-#{$key} {
+      top: $value;
+      bottom: $value;
+    }
+
+    .start-#{$key} {
+      inset-inline-start: $value;
+    }
+
+    .end-#{$key} {
+      inset-inline-end: $value;
+    }
+
+    .top-#{$key} {
+      top: $value;
+    }
+
+    .right-#{$key} {
+      right: $value;
+    }
+
+    .bottom-#{$key} {
+      bottom: $value;
+    }
+
+    .left-#{$key} {
+      left: $value;
+    }
+  }
+}
+
+@include generate-position-utilities;

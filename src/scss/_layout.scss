@@ -1,0 +1,113 @@
+// Base flex container setup
+.flex {
+  display: flex;
+
+
+
+  // Iterate over flex-wrap classes
+  @each $suffix, $value in $flex-wrap-classes {
+    &-#{$suffix} {
+      flex-wrap: $value;
+    }
+  }
+
+  // Iterate over flex-direction classes
+  @each $suffix, $value in $flex-direction-classes {
+    &-#{$suffix} {
+      flex-direction: $value;
+    }
+  }
+}
+
+// Generate justify-content classes
+@each $key, $value in $justify-content-classes {
+  .justify-#{$key} {
+    justify-content: $value;
+  }
+}
+
+// Generate justify-self classes
+@each $key, $value in $justify-self-classes {
+  .justify-self-#{$key} {
+    justify-self: $value;
+  }
+}
+
+// Generate justify-items classes
+@each $key, $value in $justify-items-classes {
+  .justify-items-#{$key} {
+    justify-items: $value;
+  }
+}
+
+// Iterate over the map to generate .items-* classes
+@each $suffix, $value in $align-items-classes {
+  .items-#{$suffix} {
+    align-items: $value;
+  }
+}
+
+
+/* Base grid container setup */
+.grid {
+  display: grid;
+}
+
+
+@each $key, $value in $sizes {
+  .gap-#{$key} {
+    gap: $value;
+  }
+}
+
+@for $i from 1 through 10 {
+  .grid-cols-#{$i} {
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 54rem) {
+    .grid-cols-#{$i} {
+      grid-template-columns: repeat($i, #{$i}fr);
+    }
+  }
+}
+
+@each $key, $value in $positions {
+  .#{$key} {
+    position: $value;
+  }
+}
+
+@for $i from 1 through 12 {
+  .col-span-#{$i} {
+    grid-column: span #{$i} / span #{$i};
+  }
+}
+
+// For the col-auto class, which does not fit into the loop pattern
+.col-auto {
+  grid-column: auto;
+}
+
+@for $i from 1 through 13 {
+  .col-start-#{$i} {
+    grid-column-start: #{$i};
+  }
+}
+
+// Additionally, for the col-start-auto class
+.col-start-auto {
+  grid-column-start: auto;
+}
+
+
+@for $i from 1 through 13 {
+  .col-end-#{$i} {
+    grid-column-end: #{$i};
+  }
+}
+
+// Additionally, for the col-end-auto class
+.col-end-auto {
+  grid-column-end: auto;
+}

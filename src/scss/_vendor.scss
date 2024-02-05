@@ -1,0 +1,20 @@
+.swiper {
+  &-pagination {
+    position: static;
+    @include heading-style($font-size: "2xl");
+
+    @media (min-width: 64rem) {
+      @include heading-style($font-size: "3xl");
+    }
+  }
+
+  &-slide {
+    &.is-home-preview {
+
+      .home-preview_image,
+      .home-preview_content-wrapper {
+        transition: all 800ms ease-in-out;
+      }
+    }
+  }
+}
