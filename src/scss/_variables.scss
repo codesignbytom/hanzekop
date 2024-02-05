@@ -56,13 +56,14 @@ $heading-font-sizes: (
   3: "7xl",
   4: "6xl",
   5: "5xl",
-  6: "4xl"
+  6: "4xl",
 );
 
 $sizes: (
   // Original spacing values
   "0": 0rem,
   "px": 1px,
+  "05": clamp(0.125rem, 1vw, 0.25rem),
   "1": clamp(0.25rem, 1vw, 0.5rem),
   "2": clamp(0.5rem, 1vw, 1rem),
   "3": clamp(0.75rem, 2vw, 1.5rem),
@@ -84,7 +85,7 @@ $sizes: (
   "dvw": 100dvw,
   "min": min-content,
   "max": max-content,
-  "fit": fit-content,
+  "fit": fit-content
 );
 
 // Define a map for align-items classes
@@ -93,7 +94,7 @@ $align-items-classes: (
   "end": flex-end,
   "center": center,
   "baseline": baseline,
-  "stretch": stretch
+  "stretch": stretch,
 );
 
 // Define maps for justify-content, justify-self, and justify-items classes
@@ -105,7 +106,7 @@ $justify-content-classes: (
   "between": space-between,
   "around": space-around,
   "evenly": space-evenly,
-  "stretch": stretch
+  "stretch": stretch,
 );
 
 $justify-self-classes: (
@@ -113,14 +114,14 @@ $justify-self-classes: (
   "start": start,
   "end": end,
   "center": center,
-  "stretch": stretch
+  "stretch": stretch,
 );
 
 $justify-items-classes: (
   "start": start,
   "end": end,
   "center": center,
-  "stretch": stretch
+  "stretch": stretch,
 );
 
 $flex-direction-classes: (
@@ -133,7 +134,7 @@ $flex-direction-classes: (
 $flex-wrap-classes: (
   "flex-wrap": wrap,
   "flex-wrap-reverse": wrap-reverse,
-  "flex-nowrap": nowrap
+  "flex-nowrap": nowrap,
 );
 
 $positions: (
@@ -141,7 +142,7 @@ $positions: (
   "fixed": fixed,
   "absolute": absolute,
   "relative": relative,
-  "sticky": sticky
+  "sticky": sticky,
 );
 
 $aspect-ratios: (
