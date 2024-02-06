@@ -56,3 +56,20 @@ function closeMenuOnOverlayClickOrEscape(event) {
 // Consolidate event listeners for closing the menu
 document.addEventListener("click", closeMenuOnOverlayClickOrEscape);
 document.addEventListener("keydown", closeMenuOnOverlayClickOrEscape);
+
+const homesGridItems = document.querySelectorAll(".homes-grid_item");
+
+// foreach item in homesGridItems, slide in from bottom and fade in with stagger delay
+homesGridItems.forEach((item) => {
+  item.style.visibility = "hidden";
+  const tl = gsap.timeline({ paused: true });
+  tl.from(item, {
+    opacity: 0,
+    y: 100,
+    duration: 0.5,
+    ease: "power1.out",
+    stagger: { amount: 0.5, from: "random" },
+    onComplete: () => { item.style.visibility = "visible"; },
+  });
+  createScrollTrigger(item, tl);
+})

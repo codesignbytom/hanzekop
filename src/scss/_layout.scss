@@ -1,16 +1,12 @@
 // Base flex container setup
 .flex {
   display: flex;
-
-
-
   // Iterate over flex-wrap classes
   @each $suffix, $value in $flex-wrap-classes {
     &-#{$suffix} {
       flex-wrap: $value;
     }
   }
-
   // Iterate over flex-direction classes
   @each $suffix, $value in $flex-direction-classes {
     &-#{$suffix} {
@@ -47,24 +43,23 @@
   }
 }
 
-
-/* Base grid container setup */
+// Generate grid classes
 .grid {
   display: grid;
 }
 
-
+// Generate gap classes
 @each $key, $value in $sizes {
   .gap-#{$key} {
     gap: $value;
   }
 }
 
+// Generate grid-template-columns
 @for $i from 1 through 10 {
   .grid-cols-#{$i} {
     grid-template-columns: 1fr;
   }
-
   @media (min-width: 54rem) {
     .grid-cols-#{$i} {
       grid-template-columns: repeat($i, #{$i}fr);
@@ -72,12 +67,14 @@
   }
 }
 
+// Generate grid-template-rows
 @each $key, $value in $positions {
   .#{$key} {
     position: $value;
   }
 }
 
+// Generate grid-column classes
 @for $i from 1 through 12 {
   .col-span-#{$i} {
     grid-column: span #{$i} / span #{$i};
@@ -89,6 +86,7 @@
   grid-column: auto;
 }
 
+// Generate grid-column-start
 @for $i from 1 through 13 {
   .col-start-#{$i} {
     grid-column-start: #{$i};
@@ -100,7 +98,7 @@
   grid-column-start: auto;
 }
 
-
+// Generate grid-column-end
 @for $i from 1 through 13 {
   .col-end-#{$i} {
     grid-column-end: #{$i};
@@ -111,3 +109,4 @@
 .col-end-auto {
   grid-column-end: auto;
 }
+
