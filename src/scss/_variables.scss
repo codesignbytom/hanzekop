@@ -77,6 +77,11 @@ $sizes: (
   "20": clamp(5rem, 10vw, 10rem),
   "24": clamp(6rem, 12vw, 12rem),
   "32": clamp(8rem, 16vw, 16rem),
+  "36": clamp(9rem, 18vw, 18rem),
+  "40": clamp(10rem, 20vw, 20rem),
+  "44": clamp(11rem, 22vw, 22rem),
+  "48": clamp(12rem, 24vw, 24rem),
+  "52": clamp(13rem, 26vw, 26rem),
   // Additional width utilities
   "full": 100%,
   "screen": 100vw,
