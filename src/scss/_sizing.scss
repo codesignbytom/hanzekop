@@ -1,0 +1,37 @@
+/* ------------------------------
+   Width and Height Utilities
+   ------------------------------ */
+
+// Generate width and height utility classes from $sizes
+@each $key, $value in $sizes {
+  // Width and height classes
+  .w-#{$key} {
+    width: $value;
+  }
+  .h-#{$key} {
+    height: $value;
+  }
+}
+
+/* ------------------------------
+   Fractional Width Utilities
+   ------------------------------ */
+
+// Generate fractional width classes from $widths
+@each $fraction, $percentage in $widths {
+  .w-#{$fraction} {
+    width: $percentage;
+  }
+}
+
+/* ------------------------------
+   Auto Width and Height Utilities
+   ------------------------------ */
+
+// Define classes for auto width and height
+.w-auto {
+  width: auto;
+}
+.h-auto {
+  height: auto;
+}
