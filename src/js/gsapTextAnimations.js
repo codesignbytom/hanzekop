@@ -123,4 +123,24 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   // Avoid flash of unstyled content
   gsap.set("[text-split]", { opacity: 1 });
+
+
+  document.querySelectorAll(".homes-grid_item").forEach((item, index) => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: item,
+        start: "top 90%",
+        end: "top center",
+        scrub: true,
+      },
+    });
+    tl.from(item, {
+      opacity: 0,
+      y: "1em",
+      duration: 0.5,
+      ease: "power1.out",
+      stagger: { amount: 0.5, from: "random" },
+    });
+  })
 });
+
