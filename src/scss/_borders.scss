@@ -13,6 +13,9 @@
 @each $size, $width in $border-widths {
   @if $size == "" {
     // Default border widths
+    .border {
+      border-width: $width;
+    }
     .border-t {
       border-top-width: $width;
     }
