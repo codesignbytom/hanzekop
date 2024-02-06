@@ -25,7 +25,7 @@
 }
 
 // Loop for named size column classes
-@each $name, $size in $size-columns {
+@each $name, $size in $column-sizes {
   .columns-#{$name} {
     columns: $size;
   }
