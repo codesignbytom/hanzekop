@@ -1,0 +1,29 @@
+// Borders
+// -------
+
+$border-styles: (
+  "solid": solid,
+  "dashed": dashed,
+  "dotted": dotted,
+  "double": double,
+  "hidden": hidden,
+  "none": none,
+);
+
+$border-widths: (
+  "0": 0px,
+  "2": 2px,
+  "4": 4px,
+  "8": 8px,
+  "": 1px,
+  // Default border width
+);
+
+$border-sides: (
+  "t": top,
+  "r": right,
+  "b": bottom,
+  "l": left,
+  "s": inline-start,
+  "e": inline-end,
+);

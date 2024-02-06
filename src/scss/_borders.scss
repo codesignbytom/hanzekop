@@ -1,0 +1,63 @@
+/* ------------------------------
+   Border Styles and Widths
+   ------------------------------ */
+
+// Border styles
+@each $style-name, $style in $border-styles {
+  .border-#{$style-name} {
+    border-style: $style;
+  }
+}
+
+// Border widths
+@each $size, $width in $border-widths {
+  @if $size == "" {
+    // Default border widths
+    .border-t {
+      border-top-width: $width;
+    }
+    .border-r {
+      border-right-width: $width;
+    }
+    .border-b {
+      border-bottom-width: $width;
+    }
+    .border-l {
+      border-left-width: $width;
+    }
+    .border-x {
+      border-left-width: $width;
+      border-right-width: $width;
+    }
+    .border-y {
+      border-top-width: $width;
+      border-bottom-width: $width;
+    }
+  } @else {
+    // Specific border widths
+    .border#{$size},
+    .border-#{$size} {
+      border-width: $width;
+    }
+    .border-t-#{$size} {
+      border-top-width: $width;
+    }
+    .border-r-#{$size} {
+      border-right-width: $width;
+    }
+    .border-b-#{$size} {
+      border-bottom-width: $width;
+    }
+    .border-l-#{$size} {
+      border-left-width: $width;
+    }
+    .border-x-#{$size} {
+      border-left-width: $width;
+      border-right-width: $width;
+    }
+    .border-y-#{$size} {
+      border-top-width: $width;
+      border-bottom-width: $width;
+    }
+  }
+}
