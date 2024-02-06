@@ -1,5 +1,6 @@
-// Grid
-// ----
+/* ------------------------------
+     Grid Setup
+     ------------------------------ */
 $grid-flows: (
   "row": row,
   "col": column,
@@ -22,9 +23,9 @@ $auto-rows: (
   "fr": "minmax(0, 1fr)",
 );
 
-// Flexbox
-// -------
-
+/* ------------------------------
+     Flexbox Setup
+     ------------------------------ */
 $align-content: (
   "normal": normal,
   "center": center,
