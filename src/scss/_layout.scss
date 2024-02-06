@@ -10,6 +10,28 @@
 }
 
 /* ------------------------------
+   Column Utilities
+   ------------------------------ */
+// Loop for numeric column classes
+@for $i from 1 through 12 {
+  .columns-#{$i} {
+    columns: $i;
+  }
+}
+
+// Class for 'columns-auto'
+.columns-auto {
+  columns: auto;
+}
+
+// Loop for named size column classes
+@each $name, $size in $size-columns {
+  .columns-#{$name} {
+    columns: $size;
+  }
+}
+
+/* ------------------------------
    Max-Width Utilities
    ------------------------------ */
 
