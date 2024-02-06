@@ -17,8 +17,8 @@
    Fractional Width Utilities
    ------------------------------ */
 
-// Generate fractional width classes from $widths
-@each $fraction, $percentage in $widths {
+// Generate fractional width classes from $sizes
+@each $fraction, $percentage in $sizes {
   .w-#{$fraction} {
     width: $percentage;
   }
