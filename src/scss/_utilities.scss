@@ -15,3 +15,32 @@
     height: $value;
   }
 }
+
+// Iterate over the colors to generate text color utilities
+@each $color-name, $color-values in $colors {
+  @if type-of($color-values) == "map" {
+    // Handle nested map for shades of color
+    @each $shade, $color in $color-values {
+      .text-#{$color-name}-#{$shade} {
+        color: $color;
+      }
+      .bg-#{$color-name}-#{$shade} {
+        background-color: $color;
+      }
+      .border-#{$color-name}-#{$shade} {
+        border-color: $color;
+      }
+    }
+  } @else {
+    // Handle single color
+    .text-#{$color-name} {
+      color: $color-values;
+    }
+    .bg-#{$color-name} {
+      background-color: $color-values;
+    }
+    .border-#{$color-name} {
+      border-color: $color-values;
+    }
+  }
+}
