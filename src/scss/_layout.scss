@@ -166,8 +166,8 @@
    Max-Width Utilities
    ------------------------------ */
 
-// Generate max-width classes from $widths
-@each $key, $value in $widths {
+// Generate max-width classes from $sizes
+@each $key, $value in $sizes {
   .max-w-#{$key} {
     max-width: $value;
   }
