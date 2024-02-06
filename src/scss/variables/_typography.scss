@@ -1,0 +1,74 @@
+// Font and Typography
+// -------------------
+
+$font-families: (
+  "sans":
+    "ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+  "serif": "ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif",
+  "mono":
+    "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+);
+
+// Extend the map for custom fonts with fallbacks
+$font-families: map-merge(
+  $font-families,
+  (
+    "custom-sans": "General Sans, " + map-get($font-families, "sans"),
+    "custom-serif": "Fraunces, " + map-get($font-families, "serif"),
+  )
+);
+
+$font-weights: (
+  "thin": 100,
+  "extralight": 200,
+  "light": 300,
+  "normal": 400,
+  "medium": 500,
+  "semibold": 600,
+  "bold": 700,
+  "extrabold": 800,
+  "black": 900,
+);
+
+$font-sizes: (
+  "sm": clamp(0.75rem, 1.5vw, 0.875rem),
+  "base": clamp(0.875rem, 2vw, 1rem),
+  "lg": clamp(1rem, 2.5vw, 1.125rem),
+  "xl": clamp(1.125rem, 3vw, 1.25rem),
+  "2xl": clamp(1.25rem, 3.5vw, 1.5rem),
+  "3xl": clamp(1.5rem, 4vw, 2rem),
+  "4xl": clamp(1.75rem, 4.5vw, 2.25rem),
+  "5xl": clamp(2rem, 5vw, 3rem),
+  "6xl": clamp(2.25rem, 5.5vw, 3.75rem),
+  "7xl": clamp(2.5rem, 6vw, 4rem),
+  "8xl": clamp(2.75rem, 6.5vw, 4.5rem),
+  "9xl": clamp(3rem, 7vw, 6rem),
+  "10xl": clamp(3.5rem, 8vw, 7rem),
+);
+
+$leading: (
+  "none": 1,
+  "tight": 1.25,
+  "snug": 1.375,
+  "normal": 1.5,
+  "relaxed": 1.75,
+  "loose": 2,
+);
+
+$tracking: (
+  "tighter": -0.05em,
+  "tight": -0.025em,
+  "normal": 0em,
+  "wide": 0.025em,
+  "wider": 0.05em,
+  "widest": 0.1em,
+);
+
+$heading-font-sizes: (
+  "1": "9xl",
+  "2": "8xl",
+  "3": "7xl",
+  "4": "6xl",
+  "5": "5xl",
+  "6": "4xl",
+);
