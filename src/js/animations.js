@@ -56,21 +56,3 @@ function closeMenuOnOverlayClickOrEscape(event) {
 // Consolidate event listeners for closing the menu
 document.addEventListener("click", closeMenuOnOverlayClickOrEscape);
 document.addEventListener("keydown", closeMenuOnOverlayClickOrEscape);
-
-document.querySelectorAll(".homes-grid_item").forEach((item, index) => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: item,
-      start: "top bottom",
-      end: "top center",
-      scrub: true,
-    },
-  });
-  tl.from(item, {
-    opacity: 0,
-    y: "20%",
-    duration: 0.5,
-    ease: "ease",
-    stagger: { amount: 0.5 },
-  });
-})
