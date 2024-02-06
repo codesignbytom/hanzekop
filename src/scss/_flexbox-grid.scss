@@ -1,0 +1,120 @@
+/* ------------------------------
+   Flex Container Setup
+   ------------------------------ */
+
+.flex {
+  display: flex;
+  // Flex-wrap and flex-direction utilities
+  @each $suffix, $value in $flex-wrap-classes, $flex-direction-classes {
+    &-#{$suffix} {
+      @if map-has-key($flex-wrap-classes, $suffix) {
+        flex-wrap: $value;
+      } @else {
+        flex-direction: $value;
+      }
+    }
+  }
+}
+
+/* ------------------------------
+     Justification Utilities
+     ------------------------------ */
+
+// Justify-content, justify-self, justify-items
+@each $prefix,
+  $classes
+    in (
+      justify: $justify-content-classes,
+      justify-self: $justify-self-classes,
+      justify-items: $justify-items-classes
+    )
+{
+  @each $suffix, $value in $classes {
+    .#{$prefix}-#{$suffix} {
+      #{$prefix}: $value;
+    }
+  }
+}
+
+/* ------------------------------
+     Grid Container Setup
+     ------------------------------ */
+
+.grid {
+  display: grid;
+  // Grid gap, template columns, and rows
+  @each $suffix, $value in $sizes {
+    .gap-#{$suffix} {
+      gap: $value;
+    }
+  }
+  // Grid template columns and rows for 1 to 12
+  @for $i from 1 through 12 {
+    .grid-cols-#{$i},
+    .grid-rows-#{$i} {
+      grid-template-columns: repeat($i, minmax(0, 1fr));
+      grid-template-rows: repeat($i, minmax(0, 1fr));
+    }
+    // Grid column and row span
+    .col-span-#{$i},
+    .row-span-#{$i} {
+      grid-column: span #{$i};
+      grid-row: span #{$i};
+    }
+    // Grid column and row start/end
+    .col-start-#{$i},
+    .col-end-#{$i},
+    .row-start-#{$i},
+    .row-end-#{$i} {
+      grid-column-start: #{$i};
+      grid-column-end: #{$i};
+      grid-row-start: #{$i};
+      grid-row-end: #{$i};
+    }
+  }
+}
+
+/* ------------------------------
+     Additional Grid Utilities
+     ------------------------------ */
+
+// Simplified utilities for grid layouts
+@each $prefix,
+  $map
+    in (
+      grid-flow: $grid-flows,
+      auto-cols: $auto-cols,
+      auto-rows: $auto-rows,
+      content: $align-content,
+      self: $self-align,
+      place-content: $place-content,
+      place-items: $place-items,
+      place-self: $place-self
+    )
+{
+  @each $suffix, $value in $map {
+    .#{$prefix}-#{$suffix} {
+      #{$prefix}: $value;
+    }
+  }
+}
+
+/* ------------------------------
+     Order Utilities
+     ------------------------------ */
+
+// Ordering classes
+@for $i from 1 through 12 {
+  .order-#{$i} {
+    order: $i;
+  }
+}
+.order-first {
+  order: -9999;
+}
+.order-last {
+  order: 9999;
+}
+.order-none {
+  order: 0;
+}

@@ -1,0 +1,121 @@
+// Grid
+// ----
+$grid-flows: (
+  "row": row,
+  "col": column,
+  "dense": dense,
+  "row-dense": "row dense",
+  "col-dense": "column dense",
+);
+
+$auto-cols: (
+  "auto": auto,
+  "max": max-content,
+  "min": min-content,
+  "fr": "minmax(0, 1fr)",
+);
+
+$auto-rows: (
+  "auto": auto,
+  "min": min-content,
+  "max": max-content,
+  "fr": "minmax(0, 1fr)",
+);
+
+// Flexbox
+// -------
+
+$align-content: (
+  "normal": normal,
+  "center": center,
+  "start": flex-start,
+  "end": flex-end,
+  "between": space-between,
+  "around": space-around,
+  "evenly": space-evenly,
+  "baseline": baseline,
+  "stretch": stretch,
+);
+
+$self-align: (
+  "auto": auto,
+  "start": flex-start,
+  "end": flex-end,
+  "center": center,
+  "stretch": stretch,
+  "baseline": baseline,
+);
+
+$place-content: (
+  "center": center,
+  "start": start,
+  "end": end,
+  "between": space-between,
+  "around": space-around,
+  "evenly": space-evenly,
+  "baseline": baseline,
+  "stretch": stretch,
+);
+
+$place-items: (
+  "start": start,
+  "end": end,
+  "center": center,
+  "baseline": baseline,
+  "stretch": stretch,
+);
+
+$place-self: (
+  "auto": auto,
+  "start": start,
+  "end": end,
+  "center": center,
+  "stretch": stretch,
+);
+
+$align-items-classes: (
+  "start": flex-start,
+  "end": flex-end,
+  "center": center,
+  "baseline": baseline,
+  "stretch": stretch,
+);
+
+$justify-content-classes: (
+  "normal": normal,
+  "start": flex-start,
+  "end": flex-end,
+  "center": center,
+  "between": space-between,
+  "around": space-around,
+  "evenly": space-evenly,
+  "stretch": stretch,
+);
+
+$justify-self-classes: (
+  "auto": auto,
+  "start": start,
+  "end": end,
+  "center": center,
+  "stretch": stretch,
+);
+
+$justify-items-classes: (
+  "start": start,
+  "end": end,
+  "center": center,
+  "stretch": stretch,
+);
+
+$flex-direction-classes: (
+  "row": row,
+  "row-reverse": row-reverse,
+  "col": column,
+  "col-reverse": column-reverse,
+);
+
+$flex-wrap-classes: (
+  "flex-wrap": wrap,
+  "flex-wrap-reverse": wrap-reverse,
+  "flex-nowrap": nowrap,
+);
