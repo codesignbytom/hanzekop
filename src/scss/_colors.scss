@@ -1,0 +1,30 @@
+/* ------------------------------
+   Color Utilities
+   ------------------------------ */
+
+// Text, background, and border colors
+@each $color-name, $color-values in $colors {
+  @if type-of($color-values) == "map" {
+    @each $shade, $color in $color-values {
+      .text-#{$color-name}-#{$shade} {
+        color: $color;
+      }
+      .bg-#{$color-name}-#{$shade} {
+        background-color: $color;
+      }
+      .border-#{$color-name}-#{$shade} {
+        border-color: $color;
+      }
+    }
+  } @else {
+    .text-#{$color-name} {
+      color: $color-values;
+    }
+    .bg-#{$color-name} {
+      background-color: $color-values;
+    }
+    .border-#{$color-name} {
+      border-color: $color-values;
+    }
+  }
+}

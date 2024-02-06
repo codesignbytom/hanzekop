@@ -1,0 +1,23 @@
+// Colors
+// ------
+
+$colors: (
+  "inherit": inherit,
+  "current": currentColor,
+  "transparent": transparent,
+  "white": #ffffff,
+  "black": #000000,
+  "brand": (
+    "50": #fefaec,
+    "100": #fcf2c9,
+    "200": #f8e28f,
+    "300": #f4ce55,
+    "400": #f2ba2d,
+    "500": #eca023,
+    "600": #d0750f,
+    "700": #ad5310,
+    "800": #8c4014,
+    "900": #733514,
+    "950": #421b06,
+  ),
+);
