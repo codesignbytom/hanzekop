@@ -3,14 +3,14 @@
    ------------------------------ */
 
 // Border styles
-@each $style-name, $style in $border-styles {
+@each $style-name, $style in $border_styles {
   .border-#{$style-name} {
     border-style: $style;
   }
 }
 
 // Border widths
-@each $size, $width in $border-widths {
+@each $size, $width in $border_widths {
   @if $size == "" {
     // Default border widths
     .border {

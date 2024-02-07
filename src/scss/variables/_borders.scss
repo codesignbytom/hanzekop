@@ -1,7 +1,4 @@
-// Borders
-// -------
-
-$border-styles: (
+$border_styles: (
   "solid": solid,
   "dashed": dashed,
   "dotted": dotted,
@@ -10,16 +7,15 @@ $border-styles: (
   "none": none,
 );
 
-$border-widths: (
+$border_widths: (
   "0": 0px,
   "2": 2px,
   "4": 4px,
   "8": 8px,
   "": 1px,
-  // Default border width
 );
 
-$border-sides: (
+$border_sides: (
   "t": top,
   "r": right,
   "b": bottom,
