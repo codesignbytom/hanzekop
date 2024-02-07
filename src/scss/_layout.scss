@@ -148,6 +148,13 @@
   }
 }
 
+// Positional Utilities
+@each $name, $value in $positions {
+  .#{$name} {
+    position: $value;
+  }
+}
+
 // Visibility Utilities
 @each $name, $value in $visibilities {
   .#{$name} {
