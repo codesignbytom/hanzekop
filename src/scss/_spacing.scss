@@ -2,8 +2,8 @@
    Padding Utilities
    ------------------------------ */
 
-// Loop through $sizes to generate padding utility classes
-@each $key, $value in $sizes {
+// Generate padding utility classes
+@each $key, $value in $integer_sizes {
   // All sides padding
   .p-#{$key} {
     padding: $value;
@@ -46,8 +46,8 @@
    Margin Utilities
    ------------------------------ */
 
-// Loop through $sizes to generate margin utility classes
-@each $key, $value in $sizes {
+// Generate margin utility classes
+@each $key, $value in $integer_sizes {
   // All sides margin
   .m-#{$key} {
     margin: $value;

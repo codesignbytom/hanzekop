@@ -20,7 +20,7 @@
 
 /* Global Gap Utilities */
 // Define gap utilities applicable for both grid and flex containers
-@each $suffix, $value in $sizes {
+@each $suffix, $value in $integer_sizes {
   .gap-#{$suffix} {
     gap: $value;
   }

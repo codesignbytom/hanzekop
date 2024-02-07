@@ -2,9 +2,8 @@
    Width and Height Utilities
    ------------------------------ */
 
-// Generate width and height utility classes from $sizes
-@each $key, $value in $sizes {
-  // Width and height classes
+// Generate width and height utility classes
+@each $key, $value in $integer_sizes {
   .w-#{$key} {
     width: $value;
   }
@@ -13,16 +12,12 @@
   }
 }
 
-@each $name, $size in $sizes {
-  // Special handling for 'auto' and 'px' keys to avoid prefixing with 'basis-'
-  @if $name == "auto" or $name == "px" {
-    .basis-#{$name} {
-      flex-basis: $size;
-    }
-  } @else {
-    .basis-#{$name} {
-      flex-basis: $size;
-    }
+@each $key, $value in $text_sizes {
+  .w-#{$key} {
+    width: $value;
+  }
+  .h-#{$key} {
+    height: $value;
   }
 }
 

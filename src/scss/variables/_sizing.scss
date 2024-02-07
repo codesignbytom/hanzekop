@@ -1,4 +1,5 @@
-$sizes: (
+$integer_sizes: (
+  "auto": auto,
   "0": 0px,
   "px": 1px,
   "0_5": clamp(0.125rem, 1vw, 0.25rem),
@@ -29,6 +30,9 @@ $sizes: (
   "72": clamp(18rem, 18vw, 18.5rem),
   "80": clamp(20rem, 20vw, 20.5rem),
   "96": clamp(24rem, 24vw, 24.5rem),
+);
+
+$text_sizes: (
   "auto": auto,
   "full": 100%,
   "screen": 100vw,

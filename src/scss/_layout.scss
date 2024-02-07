@@ -166,8 +166,14 @@
    Max-Width Utilities
    ------------------------------ */
 
-// Generate max-width classes from $sizes
-@each $key, $value in $sizes {
+// Generate max-width classes
+@each $key, $value in $integer_sizes {
+  .max-w-#{$key} {
+    max-width: $value;
+  }
+}
+
+@each $key, $value in $text_sizes {
   .max-w-#{$key} {
     max-width: $value;
   }
@@ -177,8 +183,8 @@
    Positional Utilities
    ------------------------------ */
 
-// Generate positional utility classes for inset, top, right, bottom, left from $sizes
-@each $key, $value in $sizes {
+// Generate positional utility classes for inset, top, right, bottom, left
+@each $key, $value in $integer_sizes {
   // Inset utilities for all sides
   .inset-#{$key} {
     inset: $value;
