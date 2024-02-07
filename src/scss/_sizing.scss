@@ -13,14 +13,16 @@
   }
 }
 
-/* ------------------------------
-   Fractional Width Utilities
-   ------------------------------ */
-
-// Generate fractional width classes from $sizes
-@each $fraction, $percentage in $sizes {
-  .w-#{$fraction} {
-    width: $percentage;
+@each $name, $size in $sizes {
+  // Special handling for 'auto' and 'px' keys to avoid prefixing with 'basis-'
+  @if $name == "auto" or $name == "px" {
+    .basis-#{$name} {
+      flex-basis: $size;
+    }
+  } @else {
+    .basis-#{$name} {
+      flex-basis: $size;
+    }
   }
 }
 
