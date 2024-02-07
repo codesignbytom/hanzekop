@@ -14,7 +14,7 @@ $positions: (
    Aspect Ratio
    ------------------------------ */
 
-$aspect-ratios: (
+$aspect_ratios: (
   "auto": "auto",
   "square": "1 / 1",
   "video": "16 / 9",
@@ -27,7 +27,7 @@ $aspect-ratios: (
 /* ------------------------------
    Columns
    ------------------------------ */
-$column-sizes: (
+$column_sizes: (
   "3xs": 16rem,
   "2xs": 18rem,
   "xs": 20rem,
@@ -46,7 +46,7 @@ $column-sizes: (
 /* ------------------------------
    Breakpoints
    ------------------------------ */
-$break-values: (
+$break_values: (
   "auto": auto,
   "avoid": avoid,
   "all": all,
@@ -61,7 +61,7 @@ $break-values: (
 /* ------------------------------
    Box Decoration Breaks
    ------------------------------ */
-$box-decoration-breaks: (
+$box_decoration_breaks: (
   "clone": clone,
   "slice": slice,
 );
@@ -69,7 +69,7 @@ $box-decoration-breaks: (
 /* ------------------------------
    Box Sizing
    ------------------------------ */
-$box-sizings: (
+$box_sizings: (
   "border": border-box,
   "content": content-box,
 );
@@ -129,7 +129,7 @@ $isolation: (
 );
 
 // Object-Fit Properties
-$object-fits: (
+$object_fits: (
   "contain": contain,
   "cover": cover,
   "fill": fill,
@@ -138,7 +138,7 @@ $object-fits: (
 );
 
 // Object-Position Properties
-$object-positions: (
+$object_positions: (
   "bottom": bottom,
   "center": center,
   "left": left,
@@ -158,7 +158,7 @@ $overflows: (
   "visible": visible,
   "scroll": scroll,
 );
-$overflow-axis: (
+$overflow_axis: (
   "x-auto": auto,
   "y-auto": auto,
   "x-hidden": hidden,
@@ -166,13 +166,13 @@ $overflow-axis: (
 );
 
 // Overscroll Behavior Properties
-$overscroll-behaviors: (
+$overscroll_behaviors: (
   "auto": auto,
   "contain": contain,
   "none": none,
 );
 
-$overscroll-axis: (
+$overscroll_axis: (
   "y-auto": auto,
   "y-contain": contain,
   "y-none": none,
@@ -189,7 +189,7 @@ $visibilities: (
 );
 
 // Z-Index Properties
-$z-indexes: (
+$z_indexes: (
   "0": 0,
   "10": 10,
   "20": 20,

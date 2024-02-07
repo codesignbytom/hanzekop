@@ -2,8 +2,8 @@
    Aspect Ratio Utilities
    ------------------------------ */
 
-// Generate aspect ratio classes from $aspect-ratios
-@each $aspect-name, $aspect-value in $aspect-ratios {
+// Generate aspect ratio classes from $aspect_ratios
+@each $aspect-name, $aspect-value in $aspect_ratios {
   .aspect-#{$aspect-name} {
     aspect-ratio: $aspect-value;
   }
@@ -25,7 +25,7 @@
 }
 
 // Loop for named size column classes
-@each $name, $size in $column-sizes {
+@each $name, $size in $column_sizes {
   .columns-#{$name} {
     columns: $size;
   }
@@ -34,7 +34,7 @@
 /* ------------------------------
    Breakpoint Utilities
    ------------------------------ */
-@each $name, $value in $break-values {
+@each $name, $value in $break_values {
   // Break-after classes
   .break-after-#{$name} {
     break-after: $value;
@@ -46,7 +46,7 @@
   }
 }
 
-@each $name, $value in $break-values {
+@each $name, $value in $break_values {
   // Break-inside classes
   .break-inside-#{$name} {
     break-inside: $value;
@@ -57,7 +57,7 @@
    Box Decoration Breaks
    ------------------------------ */
 
-@each $name, $value in $box-decoration-breaks {
+@each $name, $value in $box_decoration_breaks {
   .box-decoration-#{$name} {
     box-decoration-break: $value;
   }
@@ -66,7 +66,7 @@
 /* ------------------------------
    Box Sizing
    ------------------------------ */
-@each $name, $value in $box-sizings {
+@each $name, $value in $box_sizings {
   .box-#{$name} {
     box-sizing: $value;
   }
@@ -105,21 +105,21 @@
 }
 
 // Object-Fit Utilities
-@each $name, $value in $object-fits {
+@each $name, $value in $object_fits {
   .object-#{$name} {
     object-fit: $value;
   }
 }
 
 // Object-Position Utilities
-@each $name, $value in $object-positions {
+@each $name, $value in $object_positions {
   .object-#{$name} {
     object-position: $value;
   }
 }
 
 // Overflow Utilities
-@each $name, $value in $overflow-axis {
+@each $name, $value in $overflow_axis {
   .#{$name} {
     @if str-index($name, "x-") {
       overflow-x: $value;
@@ -130,14 +130,14 @@
 }
 
 // Overscroll Behavior Utilities
-@each $name, $value in $overscroll-behaviors {
+@each $name, $value in $overscroll_behaviors {
   .overscroll-#{$name} {
     overscroll-behavior: $value;
   }
 }
 
 // Corrected loop for axis-specific classes
-@each $name, $value in $overscroll-axis {
+@each $name, $value in $overscroll_axis {
   .#{$name} {
     // Correctly reference overscroll-behavior or overscroll-behavior-{x/y}
     @if str-index($name, "y-") {
@@ -163,26 +163,9 @@
 }
 
 // Z-Index Utilities
-@each $name, $value in $z-indexes {
+@each $name, $value in $z_indexes {
   .z-#{$name} {
     z-index: $value;
-  }
-}
-
-/* ------------------------------
-   Max-Width Utilities
-   ------------------------------ */
-
-// Generate max-width classes
-@each $key, $value in $integer_sizes {
-  .max-w-#{$key} {
-    max-width: $value;
-  }
-}
-
-@each $key, $value in $text_sizes {
-  .max-w-#{$key} {
-    max-width: $value;
   }
 }
 
@@ -191,7 +174,7 @@
    ------------------------------ */
 
 // Generate positional utility classes for inset, top, right, bottom, left
-@each $key, $value in $integer_sizes {
+@each $key, $value in $sizes {
   // Inset utilities for all sides
   .inset-#{$key} {
     inset: $value;
