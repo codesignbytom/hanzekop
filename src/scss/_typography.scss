@@ -2,21 +2,11 @@
    Global Mixins
    ------------------------------ */
 
-// Mixin for heading styles
-@mixin heading(
-  $font-weight: "normal",
-  $letter-spacing: "normal",
-  $line-height: "normal",
-  $font-size: null
-) {
-  margin: unset;
-  font-family: unquote(map-get($font-families, "custom-serif"));
-  font-weight: map-get($font-weights, $font-weight);
-  letter-spacing: map-get($tracking, $letter-spacing);
-  line-height: map-get($leading, $line-height);
-
-  @if $font-size != null {
-    font-size: map-get($font-sizes, $font-size);
+@mixin apply-font-size($size-name) {
+  @if map-has-key($font-sizes, $size-name) {
+    font-size: map-get($font-sizes, $size-name);
+  } @else {
+    @warn "Size #{$size-name} not defined in $font-sizes.";
   }
 }
 
@@ -31,25 +21,14 @@
 /* ------------------------------
    Heading Styles
    ------------------------------ */
-
-.heading {
-  @include heading(
-    $font-weight: "light",
-    $letter-spacing: "tight",
-    $line-height: "none"
-  );
-}
-
 // Generate heading styles dynamically
-@each $level, $size in $heading-font-sizes {
-  h#{$level},
-  .heading-h#{$level} {
-    @include heading(
-      $font-size: $size,
-      $font-weight: "light",
-      $letter-spacing: "tight",
-      $line-height: "none"
-    );
+@each $heading-level, $size-name in $heading_sizes {
+  h#{$heading-level},
+  .h#{$heading-level} {
+    @include apply-font-size($size-name);
+    letter-spacing: map-get($map: $font_tracking, $key: tight);
+    line-height: map-get($map: $font_leading, $key: tight);
+    font-weight: map-get($map: $font_weights, $key: light);
   }
 }
 
@@ -58,35 +37,35 @@
    ------------------------------ */
 
 // Text size utilities
-@each $name, $size in $font-sizes {
-  .text-#{$name} {
-    font-size: $size;
+@each $size, $clamp-value in $font_sizes {
+  .text-#{$size} {
+    font-size: #{$clamp-value};
   }
 }
 
 // Line height utilities
-@each $leading-name, $leading-value in $leading {
+@each $leading-name, $leading-value in $font_leading {
   .leading-#{$leading-name} {
     line-height: $leading-value;
   }
 }
 
 // Letter spacing utilities
-@each $tracking-name, $tracking-value in $tracking {
+@each $tracking-name, $tracking-value in $font_tracking {
   .tracking-#{$tracking-name} {
     letter-spacing: $tracking-value;
   }
 }
 
 // Font weight utilities
-@each $weight-name, $weight-value in $font-weights {
+@each $weight-name, $weight-value in $font_weights {
   .font-#{$weight-name} {
     font-weight: $weight-value;
   }
 }
 
 // Font family utilities with explicit unquoting
-@each $family-name, $family-value in $font-families {
+@each $family-name, $family-value in $font_families {
   .font-#{$family-name} {
     font-family: unquote($family-value);
   }
