@@ -1,3 +1,9 @@
+@each $name, $size in $integer_sizes {
+  .basis-#{$name} {
+    flex-basis: $size;
+  }
+}
+
 /* ------------------------------
    Flex Container Setup
    ------------------------------ */
