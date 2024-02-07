@@ -71,11 +71,6 @@ html {
 .swiper {
   &-pagination {
     position: static;
-    @include heading($font-size: "2xl");
-
-    @media (min-width: 64rem) {
-      @include heading($font-size: "3xl");
-    }
   }
 
   &-slide {

@@ -3,7 +3,7 @@
    ------------------------------ */
 
 // Generate padding utility classes
-@each $key, $value in $integer_sizes {
+@each $key, $value in $sizes {
   // All sides padding
   .p-#{$key} {
     padding: $value;
@@ -47,7 +47,7 @@
    ------------------------------ */
 
 // Generate margin utility classes
-@each $key, $value in $integer_sizes {
+@each $key, $value in $sizes {
   // All sides margin
   .m-#{$key} {
     margin: $value;
