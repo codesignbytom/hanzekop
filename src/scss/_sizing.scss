@@ -3,7 +3,7 @@
    ------------------------------ */
 
 // Generate width and height utility classes
-@each $key, $value in $integer_sizes {
+@each $key, $value in $sizes {
   .w-#{$key} {
     width: $value;
   }
@@ -12,7 +12,7 @@
   }
 }
 
-@each $key, $value in $text_sizes {
+@each $key, $value in $sizes {
   .w-#{$key} {
     width: $value;
   }
@@ -21,14 +21,26 @@
   }
 }
 
-/* ------------------------------
-   Auto Width and Height Utilities
-   ------------------------------ */
-
-// Define classes for auto width and height
 .w-auto {
   width: auto;
 }
 .h-auto {
   height: auto;
+}
+
+/* ------------------------------
+   Max-Width Utilities
+   ------------------------------ */
+
+// Generate max-width classes
+@each $key, $value in $sizes {
+  .max-w-#{$key} {
+    max-width: $value;
+  }
+}
+
+@each $key, $value in $sizes {
+  .max-w-#{$key} {
+    max-width: $value;
+  }
 }
