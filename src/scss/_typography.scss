@@ -4,13 +4,13 @@
 
 // Mixin for heading styles
 @mixin heading(
-  $font-weight: "light",
-  $letter-spacing: "tight",
-  $line-height: "none",
+  $font-weight: "normal",
+  $letter-spacing: "normal",
+  $line-height: "normal",
   $font-size: null
 ) {
   margin: unset;
-  font-family: map-get($font-families, "heading");
+  font-family: unquote(map-get($font-families, "custom-serif"));
   font-weight: map-get($font-weights, $font-weight);
   letter-spacing: map-get($tracking, $letter-spacing);
   line-height: map-get($leading, $line-height);
@@ -32,15 +32,24 @@
    Heading Styles
    ------------------------------ */
 
-// Generate heading styles dynamically
 .heading {
-  @include heading;
+  @include heading(
+    $font-weight: "light",
+    $letter-spacing: "tight",
+    $line-height: "none"
+  );
 }
 
+// Generate heading styles dynamically
 @each $level, $size in $heading-font-sizes {
   h#{$level},
-  .heading_h#{$level} {
-    @include heading($font-size: $size);
+  .heading-h#{$level} {
+    @include heading(
+      $font-size: $size,
+      $font-weight: "light",
+      $letter-spacing: "tight",
+      $line-height: "none"
+    );
   }
 }
 
