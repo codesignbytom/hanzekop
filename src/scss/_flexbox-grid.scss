@@ -1,4 +1,4 @@
-@each $name, $size in $integer_sizes {
+@each $name, $size in $sizes {
   .basis-#{$name} {
     flex-basis: $size;
   }
@@ -8,108 +8,36 @@
    Flex Container Setup
    ------------------------------ */
 
-.flex {
-  display: flex;
-
-  @each $suffix, $value in $flex-direction-classes {
-    &-#{$suffix} {
-      flex-direction: $value;
-    }
-  }
-
-  @each $suffix, $value in $flex-wrap-classes {
-    &-#{$suffix} {
-      flex-wrap: $value;
-    }
+@each $suffix, $value in $flex-direction {
+  .flex-#{$suffix} {
+    flex-direction: $value;
   }
 }
 
-/* Global Gap Utilities */
-// Define gap utilities applicable for both grid and flex containers
-@each $suffix, $value in $integer_sizes {
-  .gap-#{$suffix} {
-    gap: $value;
+@each $suffix, $value in $flex-wrap {
+  .flex-#{$suffix} {
+    flex-wrap: $value;
   }
 }
 
-/* ------------------------------
-     Justification Utilities
-     ------------------------------ */
-
-/* Justification Utilities */
-// Loop for each justification type
-@each $prefix,
-  $classes
-    in (
-      "justify-content": $justify-content-classes,
-      "justify-self": $justify-self-classes,
-      "justify-items": $justify-items-classes
-    )
-{
-  @each $suffix, $value in $classes {
-    .#{$prefix}-#{$suffix} {
-      #{$prefix}: $value;
-    }
+// Flex Utilities
+@each $name, $value in $flex {
+  .flex-#{$name} {
+    flex: $value;
   }
 }
 
-/* ------------------------------
-     Grid Container Setup
-     ------------------------------ */
-
-.grid {
-  display: grid;
-}
-
-// Generating grid template columns, rows, span, and start/end classes
-@for $i from 1 through 12 {
-  .grid-cols-#{$i} {
-    grid-template-columns: repeat($i, minmax(0, 1fr));
-  }
-  .grid-rows-#{$i} {
-    grid-template-rows: repeat($i, minmax(0, 1fr));
-  }
-
-  .col-span-#{$i} {
-    grid-column: span #{$i};
-  }
-  .row-span-#{$i} {
-    grid-row: span #{$i};
-  }
-
-  .col-start-#{$i} {
-    grid-column-start: #{$i};
-  }
-  .col-end-#{$i} {
-    grid-column-end: #{$i};
-  }
-  .row-start-#{$i} {
-    grid-row-start: #{$i};
-  }
-  .row-end-#{$i} {
-    grid-row-end: #{$i};
+// Flex-Grow Utilities
+@each $name, $value in $flex-grow {
+  .#{$name} {
+    flex-grow: $value;
   }
 }
 
-/* Additional Grid Utilities */
-// Adjusted to directly apply additional grid layout styles
-@each $prefix,
-  $map
-    in (
-      "grid-flow": $grid-flows,
-      "auto-cols": $auto-cols,
-      "auto-rows": $auto-rows,
-      "content": $align-content,
-      "self": $self-align,
-      "place-content": $place-content,
-      "place-items": $place-items,
-      "place-self": $place-self
-    )
-{
-  @each $suffix, $value in $map {
-    .#{$prefix}-#{$suffix} {
-      #{$prefix}: $value;
-    }
+// Flex-Shrink Utilities
+@each $name, $value in $flex-shrink {
+  .#{$name} {
+    flex-shrink: $value;
   }
 }
 
@@ -131,4 +59,93 @@
 }
 .order-none {
   order: 0;
+}
+
+/* ------------------------------
+     Grid Container Setup
+     ------------------------------ */
+
+// Generating grid template columns, rows, span, and start/end classes
+@for $i from 1 through 12 {
+  .grid-cols-#{$i} {
+    grid-template-columns: repeat($i, minmax(0, 1fr));
+  }
+  .grid-rows-#{$i} {
+    grid-template-rows: repeat($i, minmax(0, 1fr));
+  }
+  .col-span-#{$i} {
+    grid-column: span #{$i};
+  }
+  .row-span-#{$i} {
+    grid-row: span #{$i};
+  }
+  .col-start-#{$i} {
+    grid-column-start: #{$i};
+  }
+  .col-end-#{$i} {
+    grid-column-end: #{$i};
+  }
+  .row-start-#{$i} {
+    grid-row-start: #{$i};
+  }
+  .row-end-#{$i} {
+    grid-row-end: #{$i};
+  }
+}
+
+@each $size, $value in $sizes {
+  // General gap
+  .gap-#{$size} {
+    gap: $value;
+  }
+
+  // Horizontal gap
+  .gap-x-#{$size} {
+    column-gap: $value;
+  }
+
+  // Vertical gap
+  .gap-y-#{$size} {
+    row-gap: $value;
+  }
+}
+
+/* ------------------------------
+     Justification Utilities
+     ------------------------------ */
+
+@each $suffix, $value in $justify-content {
+  .justify-#{$suffix} {
+    justify-content: $value;
+  }
+}
+@each $suffix, $value in $justify-self {
+  .justify-self-#{$suffix} {
+    justify-self: $value;
+  }
+}
+@each $suffix, $value in $justify-items {
+  .justify-items-#{$suffix} {
+    justify-items: $value;
+  }
+}
+
+/* ------------------------------
+     Alignment Utilities
+     ------------------------------ */
+
+@each $suffix, $value in $align-content {
+  .content-#{$suffix} {
+    align-content: $value;
+  }
+}
+@each $suffix, $value in $align-self {
+  .self-#{$suffix} {
+    align-self: $value;
+  }
+}
+@each $suffix, $value in $align-items {
+  .items-#{$suffix} {
+    align-items: $value;
+  }
 }

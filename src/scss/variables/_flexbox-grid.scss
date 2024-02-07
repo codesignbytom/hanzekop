@@ -1,7 +1,7 @@
 /* ------------------------------
      Grid Setup
      ------------------------------ */
-$grid-flows: (
+$grid_flows: (
   "row": row,
   "col": column,
   "dense": dense,
@@ -9,14 +9,14 @@ $grid-flows: (
   "col-dense": "column dense",
 );
 
-$auto-cols: (
+$auto_cols: (
   "auto": auto,
   "max": max-content,
   "min": min-content,
   "fr": "minmax(0, 1fr)",
 );
 
-$auto-rows: (
+$auto_rows: (
   "auto": auto,
   "min": min-content,
   "max": max-content,
@@ -26,7 +26,33 @@ $auto-rows: (
 /* ------------------------------
      Flexbox Setup
      ------------------------------ */
-$align-content: (
+$justify_content: (
+  "normal": normal,
+  "start": flex-start,
+  "end": flex-end,
+  "center": center,
+  "between": space-between,
+  "around": space-around,
+  "evenly": space-evenly,
+  "stretch": stretch,
+);
+
+$justify_self: (
+  "auto": auto,
+  "start": start,
+  "end": end,
+  "center": center,
+  "stretch": stretch,
+);
+
+$justify_items: (
+  "start": start,
+  "end": end,
+  "center": center,
+  "stretch": stretch,
+);
+
+$align_content: (
   "normal": normal,
   "center": center,
   "start": flex-start,
@@ -38,7 +64,15 @@ $align-content: (
   "stretch": stretch,
 );
 
-$self-align: (
+$align_items: (
+  "start": flex-start,
+  "end": flex-end,
+  "center": center,
+  "baseline": baseline,
+  "stretch": stretch,
+);
+
+$align_self: (
   "auto": auto,
   "start": flex-start,
   "end": flex-end,
@@ -47,7 +81,7 @@ $self-align: (
   "baseline": baseline,
 );
 
-$place-content: (
+$place_content: (
   "center": center,
   "start": start,
   "end": end,
@@ -58,7 +92,7 @@ $place-content: (
   "stretch": stretch,
 );
 
-$place-items: (
+$place_items: (
   "start": start,
   "end": end,
   "center": center,
@@ -66,7 +100,7 @@ $place-items: (
   "stretch": stretch,
 );
 
-$place-self: (
+$place_self: (
   "auto": auto,
   "start": start,
   "end": end,
@@ -74,49 +108,32 @@ $place-self: (
   "stretch": stretch,
 );
 
-$align-items-classes: (
-  "start": flex-start,
-  "end": flex-end,
-  "center": center,
-  "baseline": baseline,
-  "stretch": stretch,
-);
-
-$justify-content-classes: (
-  "normal": normal,
-  "start": flex-start,
-  "end": flex-end,
-  "center": center,
-  "between": space-between,
-  "around": space-around,
-  "evenly": space-evenly,
-  "stretch": stretch,
-);
-
-$justify-self-classes: (
-  "auto": auto,
-  "start": start,
-  "end": end,
-  "center": center,
-  "stretch": stretch,
-);
-
-$justify-items-classes: (
-  "start": start,
-  "end": end,
-  "center": center,
-  "stretch": stretch,
-);
-
-$flex-direction-classes: (
+$flex-direction: (
   "row": row,
   "row-reverse": row-reverse,
   "col": column,
   "col-reverse": column-reverse,
 );
 
-$flex-wrap-classes: (
-  "flex-wrap": wrap,
-  "flex-wrap-reverse": wrap-reverse,
-  "flex-nowrap": nowrap,
+$flex_wrap: (
+  "wrap": wrap,
+  "wrap-reverse": wrap-reverse,
+  "nowrap": nowrap,
+);
+
+$flex: (
+  "1": "1 1 0%",
+  "auto": "1 1 auto",
+  "initial": "0 1 auto",
+  "none": "none",
+);
+
+$flex_grow: (
+  "grow": 1,
+  "grow-0": 0,
+);
+
+$flex_shrink: (
+  "shrink": 1,
+  "shrink-0": 0,
 );
