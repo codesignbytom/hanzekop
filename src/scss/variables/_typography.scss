@@ -1,18 +1,10 @@
 $font_families: (
   "sans":
-    "ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
-  "serif": "ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif",
+    "General Sans, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', ui-sans-serif, sans-serif",
+  "serif":
+    "Fraunces, Georgia, Cambria, 'Times New Roman', Times, ui-serif, serif",
   "mono":
-    "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
-);
-
-// Extend the map for custom fonts with fallbacks
-$font_families: map-merge(
-  $font_families,
-  (
-    "custom-sans": "General Sans, " + map-get($font_families, "sans"),
-    "custom-serif": "Fraunces, " + map-get($font_families, "serif"),
-  )
+    "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', ui-monospace, monospace",
 );
 
 $font-sizes: (
