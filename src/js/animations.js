@@ -56,3 +56,26 @@ function closeMenuOnOverlayClickOrEscape(event) {
 // Consolidate event listeners for closing the menu
 document.addEventListener("click", closeMenuOnOverlayClickOrEscape);
 document.addEventListener("keydown", closeMenuOnOverlayClickOrEscape);
+
+const listingPreviewImageWrap = document.querySelectorAll(
+  ".listing-prev_image-wrap"
+)
+
+const listingPreviewImageOverlay = document.querySelectorAll(
+  ".listing-prev_image-overlay"
+)
+
+
+listingPreviewImageWrap.forEach((imageWrap) => {
+  imageWrap.addEventListener("mouseover", (event) => {
+    const overlay = event.currentTarget.querySelector(".listing-prev_image-overlay");
+    overlay.style.transition = "opacity 0.5s ease-out";
+    overlay.style.opacity = "100%";
+  });
+
+  imageWrap.addEventListener("mouseleave", (event) => {
+    const overlay = event.currentTarget.querySelector(".listing-prev_image-overlay");
+    overlay.style.transition = "opacity 0.5s ease-out";
+    overlay.style.opacity = "0%";
+  });
+});
