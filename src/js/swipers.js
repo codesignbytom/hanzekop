@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
     createElements: true,
     parallax: true,
     navigation: {
-      nextEl: ".swiper.is-listing-prev .swiper-btn-next",
-      prevEl: ".swiper.is-listing-prev .swiper-btn-prev",
+      nextEl: ".listing-prevs_swiper-wrap .swiper-btn-next",
+      prevEl: ".listing-prevs_swiper-wrap .swiper-btn-prev",
     },
   });
 });
